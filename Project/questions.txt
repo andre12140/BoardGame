@@ -1,0 +1,231 @@
+?D Sendo A, B e C classes concretas, em que A e B implementam I e estendem C, não dará erro a expressão:
+A - (A) new B().
+B - (Object) new I().
+C - (B) new C().
+D - (C) new B().
+
+?Y Uma classe pode implementar mais do que uma interface?
+
+?N Uma classe pode estender mais do que uma classe?
+
+?B Na instrução try..catch, as instruções contidas no bloco finnaly:
+A - só são executadas após a ocorrência de uma exceção capturada.
+B - fazem, normalmente, a libertação de recursos.
+C - só são executadas no final, caso não haja exceção.
+
+?N Assumindo a declaração "Object o = new A();" a avaliação da expressão "o instanceof A" resulta false?
+
+?C A declaração "List<Integer> lst = new ArrayList<>()"  
+A - provoca erro de compilação porque os tipos List e ArrayList não são compatíveis.
+B - não permite inserir elementos com a instrução lst.add(3) porque 3 não é um objeto da classe Integer.
+C - permite percorrer os elementos com for(Integer v : lst) porque List<T> implementa Iterable<T>.
+
+?N A declaração "List<Integer> l = new LinkedList<>();" permite "l.addFirst(3);" porque addFirst() está definido em LinkedList?
+
+?A No sistema de exceções do Java a exceção java.lang.IndexOutOfBoundsException:
+A - estende java.lang.RuntimeException.
+B - pode ser lançada através da instrução throw new java.lang.Exception("index error").
+C - pode ser lançada através da instrução throw new java.lang.RuntimeException("index error").
+
+?Y Uma classe deve ser abstrata se não fizer sentido instanciar objetos desse tipo?
+
+?N Uma classe só pode ser abstrata se tiver pelo menos um método abstrato?
+
+?B Se objA é uma referência do tipo A, então os objetos referidos por objA podem ser instâncias concretas de:
+A - B, se B for uma classe estendida por A.
+B - B, se B estender A.
+
+?C  Uma classe tem que ser abstrata se:
+A - não definir qualquer construtor.
+B - não declarar variáveis de instância.
+C - tiver algum método abstrato.
+
+?Y Os métodos redefinidos (override) numa classe derivada têm que ter a mesma acessibilidade ou mais abrangente?
+
+?N Os métodos redefinidos (override) numa classe derivada têm que ter a mesma acessibilidade?
+
+?N É possível redefinir (override) um método numa classe derivada se na classe base foi definido como privado?
+
+?B Dadas as declarações: "class A extends B implements J {…}" e "class B extends C implements I {…}" não dará erro:
+A - I i = new C().
+B - I i = new A().
+C - A a = new B().
+
+?C Sejam A, B e C classes e I e J interfaces, então:
+A - I não pode estender de J.
+B - A pode estender as duas classes B e C.
+C - A pode implementar as duas interfaces I e J.
+
+?B A definição "Set<A> s = new HashSet<>();":
+A - a classe A só tem que redefinir o método equals().
+B - a classe A tem que redefinir o método hashCode() e equals() e estes serem consitentes.
+C - a classe A só tem que redefinir o método hashCode().
+
+?Y Quando se define "Set<A> s = new TreeSet<>();" a classe A tem que implementar a interface Comparable?
+
+?N Quando se define "Set<A> s = new TreeSet<>();" a classe A tem que implementar a interface Comparator?
+
+?B Quando se define "Map<A, B> m = new TreeMap<>();":
+A - a classe B tem que implementar a interface Comparable.
+B - a classe A tem que implementar a interface Comparable.
+
+?A A definição "HashMap<A, B> m = new HashMap<>();":
+A - a classe A tem que redefinir os métodos hasCode() e equals() e estes serem consitentes.
+B - a classe B tem que redefinir os métodos hasCode() e equals() e estes serem consitentes.
+C - as duas classes tem que redefinir os métodos hasCode() e equals() e estes serem consitentes.
+
+?A As expressões lambda: 
+A - só podem ser utilizadas nas interfaces com um único método.
+B - não têm acesso às variáveis presentes no contexto de sua utilização.
+C - só podem conter uma expressão.
+
+?B Uma classe aninhada estática: 
+A - pode referir diretamente variáveis e métodos de instância definidos na classe externa.
+B - foi aninhada na outra classe de nível superior por conveniência (acesso aos membros privados).
+C - tem que ser public.
+
+?Y Uma classe aninhada não estática só pode existir se existir uma instância da classe externa? 
+
+?A Uma classe anónima local a um método é uma expressão, a sua definição: 
+A - pode ser usada na iniciação das variáveis, na passagem de parâmetros ou no retorno de valores.
+B - não pode ter variáveis de instância (campos) nem métodos extras.
+C - tem acesso a todas as variáveis locais do método em que é definida.
+
+?C Uma classe local a um método: 
+A - pode declarar métodos estáticos ou interfaces.
+B - não pode ter variáveis de instância (campos) nem métodos extras.
+C - só pode ter variáveis estáticas desde que sejam constantes.
+
+?Y Classes aninhadas permitem definir um novo tipo no contexto da classe externa? 
+
+?C Usar classes aninhadas não estáticas em vez de estáticas:
+A - quando se pretende pretende aceder aos campos privados da classe aninhada.
+B - quando é necessário declarar campos ou métodos auxiliares adicionais.
+C - quando é preciso referir diretamente variáveis de instância da classe externa. 
+
+?A Usar expressões lambda:
+A - quando se está a encapsular um único comportamento que se está a passar para outro método.
+B - quando é necessário declarar campos ou métodos auxiliares adicionais.
+C - quando é preciso um construtor especifico. 
+
+?B Usar classes anónimas em vez de expressões lambda:
+A - quando se está a encapsular um único comportamento que se está a passar para outro método.
+B - quando é necessário declarar campos ou métodos auxiliares adicionais.
+C - quando é preciso um construtor especifico. 
+
+?B Quando se pretende passar um comportamento a um método e existe um método que coincide:
+A - deve ser usada uma classe anónima.
+B - deve ser usada uma referêcia para um método.
+C - deve ser usada uma expressão lambda. 
+
+?A Quando é necessário declarar campos ou métodos auxiliares adicionais deve ser usada:
+A - uma classe anónima.
+B - uma referêcia para um método.
+C - uma expressão lambda. 
+
+?C Quando é preciso um construtor especifico deve ser:
+A - usada uma classe anónima.
+B - usada uma expressão lambda.
+C - definida uma classe local. 
+
+?A Na expressão "new PrintWriter( new FileWriter(pathname) )":
+A - o construtor de FileWriter pode lançar a excepção IOException.
+B - o construtor de PrintWriter pode lançar a excepção IOException.
+C - não são lançadas exceções.
+
+?C A expressão "new PrintWriter( System.out )":
+A - pode lançar a excepção IOException.
+B - dará erro de compilação.
+C - não tem que estar num bloco try-catch porque não é lançada a exceção IOException.
+
+?Y Quando um programa termina a escrita ou a leitura de um ficheiro deve fechar o ficheiro?
+
+?B O método readLine() de BufferedReader quando a operação de leitura for além do fim do ficheiro:
+A - lança a excepção IOException.
+B - retorna null.
+C - retorna uma string vazia ("").
+D - retorna o inteiro -1.
+
+?C O método read() de BufferedReader quando a operação de leitura for além do fim do ficheiro:
+A - lança a excepção IOException.
+B - retorna null.
+C - retorna o inteiro -1.
+
+?Y A interface Comparator permite definir qualquer relação de ordem sobre dois objetos?
+
+?Y A interface Comparable permite definir uma, e só uma, ordem sobre instâncias de uma classe (a ordem natural)?
+
+?N A interface Comparable permite definir mais do que um ordem sobre instâncias de uma classe?
+
+?C Na framework de coleções para reduzir o número de interfaces determinadas operações são opcionais:
+A - quando uma implementação não suporta a execução de uma operação não implementa o correspondente método.
+B - quando uma implementação não suporta a execução de uma operação o correspondente método não pode ser chamado.
+C - quando uma implementação não suporta a execução de uma operação lança uma excepção.
+
+?B O iterador é um mecanismo de programação que gera uma sequência de valores:
+A - os valores gerados existem sempre numa estrutura de dados.
+B - permitindo que se defina um algoritmo aplicável indistintamente a qualquer colecção.
+C - os valores gerados não existem numa estrutura de dados só são calculados quando são necessários.
+
+?C A interface Queue representa uma fila que fornece operações:
+A - de inserção (offer()), extração(poll()) e inspeção (peek()).
+B - em que os elementos contidos nas filas não têm qualquer ordem.
+C - em que os elementos estão sempre ordenados pela ordem natural.  
+
+?A A classe Deque fornece as operações de inserção (push()), extração(pop()) e inspeção (peek()) :
+A - para serem usadas em filas com disciplina FILO (stacks).
+B - para serem usadas em filas com disciplina FIFO.
+C - para serem usadas em filas com prioridade.
+
+?D A interface PriorityQueue representa uma fila com prioridades:
+A - em que é sempre necessário passar um Comparator no construtor.
+B - em que os elementos são sempre removidos pela ordem natural.
+C - em que os elementos contidos estão ordenados segundo a disciplina FIFO.
+D - em que os elementos são removidos pela ordem natural ou segundo um comparador.  
+
+?B Ao iterar uma fila que foi declarada "Queue<Integer> pq = new PriorityQueue<>()":
+A - obtem-se os elementos pela ordem natural.
+B - obtem-se os elementos por uma ordem qualquer.
+C - obtem-se os elementos pela ordem de inserção.
+
+?C A seguinte declaração permite obter uma fila em que os elementos contidos são removido segundo a disciplina FIFO:
+A - Queue<Integer> q = new ArrayList<>().
+B - Queue<Integer> q = new PriorityQueue<>(). 
+C - Queue<Integer> q = new LinckedList<>(). 
+
+?C A seguinte declaração permite obter uma fila em que os elementos contidos são removido segundo a disciplina FILO:
+A - Deque<Integer> q = new ArrayDeque<>().
+B - Deque<Integer> q = new PriorityQueue<>(). 
+C - Deque<Integer> q = new ArrayList<>(). 
+
+?N Os métodos sobrecarregados (overload) têm que ter número de parâmetros diferentes?
+
+?N Os métodos sobrecarregados (overload) podem ter o mesmo nome, número e tipo de parâmetros desde que o tipo de retorno seja diferente?
+
+?Y Os métodos sobrecarregados (overload) tendo o mesmo número de parâmetros têm que ter o tipo de algum parâmetro diferente?
+
+?Y Na definição duma classe podem existir dois métodos com o mesmo nome, mas com diferente número ou tipo de parâmetros (overload)?
+
+?N Na definição duma classe podem existir métodos com o mesmo nome, número e tipo de parâmetros (override)?
+
+?D Os métodos finais, isto é, que contêm a palavra chave final antes do tipo de retorno:
+A - não podem afetar as váriáveis de instância.
+B - só podem ser acedidos por métodos da própria classe.
+C - só podem ser redefinidos (override) na própria classe.
+D - não podem ser redefinidos (override) nas classes derivadas.  
+
+?C Dada a declaração "public final class B {…}", a declaração: "public class A extend B {…}":
+A - define uma classe que estende B mas não tem acesso aos métodos de B.
+B - define uma classe que estende B mas não pode redefinir (override) os métodos de B.
+C - dará erro de compilação, visto que B sendo final não pode ser estendido.
+
+?C As variáveis de instância finais:
+A - não podem ser afetadas.
+B - têm que ser iniciadas quando são declaradas.
+C - só podem ser afetadas uma, e só uma, vez nos construtores.
+
+?C A declaração da constante: "final int MAX = 10"
+A - permite que MAX tenha um valor diferente de dez se for afetado nos construtores.
+B - deve ser antecedida por static, pois MAX será sempre dez qualquer que seja a instância.
+C - não permite que MAX seja redefinido (override) nas classes derivadas.
+
